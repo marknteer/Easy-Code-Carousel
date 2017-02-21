@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Home</title>
-
+<title>Carousel</title>
 <body>
-
+  
+	<style type="text/css">
+		.mySlides {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+  
   <div style="height: 480px;">
     <div style="float: left; width: 33%; height: 100%;" >
       <button onclick="plusDivs(-1)" style="height: 480px; align-items: center; float: right;"><font size="50px">&#10094;</font></button>
     </div>
     <div style="display: inline-block; width: 34%; height: 100%;">
-      <img class="mySlides" src="YOUR_IMAGE_1">
-      <img class="mySlides" src="YOUR_IMAGE_2">
-      <img class="mySlides" src="YOUR_IMAGE_3">
-      <img class="mySlides" src="YOUR_IMAGE_4">
+      <img class="mySlides" src="img/6 (Custom).jpg">
+      <img class="mySlides" src="img/5 (Custom).jpg">
+      <img class="mySlides" src="img/1 (Custom).jpg">
+      <img class="mySlides" src="img/2 (Custom).jpg">
     </div>
     <div style="float: right; width: 33%; height: 100%;" >
       <button onclick="plusDivs(+1)" style="height: 480px; align-items: center;"><font size="50px">&#10095;</font></button>
     </div>
 
-  
+  <script type="text/javascript">
+    var slideIndex = 1;
+    showDivs(slideIndex);
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+    function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length} ;
+      for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    x[slideIndex-1].style.display = "block";
+    }
+  </script>
+    
 </body>
 </html>
